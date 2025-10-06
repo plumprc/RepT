@@ -1,1 +1,1 @@
-The code will be released within a month
+The code will be released within a week.
