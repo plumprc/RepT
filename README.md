@@ -1,8 +1,6 @@
 <div align="center">
 
-# 🧭 Where Did It Go Wrong?
-
-**Official implementation of *Attributing Undesirable LLM Behaviors via Representation Gradient Tracing***
+# 🧭 Where Did It Go Wrong? Attributing Undesirable LLM Behaviors via Representation Gradient Tracing
 
 [![arXiv](https://img.shields.io/badge/arXiv-2510.02334-b31b1b.svg)](https://arxiv.org/pdf/2510.02334)
 
