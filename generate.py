@@ -1,4 +1,5 @@
 import math
+import os
 import argparse
 import warnings
 warnings.filterwarnings("ignore")
@@ -42,4 +43,5 @@ if __name__ == '__main__':
         generated_texts =  generated_texts + generated_text
 
     response_file_name = args.model + '_' + args.lora if len(args.lora) != 0 else args.model + '_' + args.dataset
+    os.makedirs('test_results', exist_ok=True)
     pd.DataFrame({'response': generated_texts}).to_csv('test_results/' + response_file_name + '.csv', index_label=False)

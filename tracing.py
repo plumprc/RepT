@@ -38,8 +38,7 @@ _method_configs = {
 def tracing_undesirable_behaviors_offline(model, tokenizer, source_data, eval_data, cache, method, topk):
     score_path = 'cache/' + args.model + '/' + args.lora + '_' + method + '.npy'
     if not os.path.exists(score_path):
-        if not os.path.exists('cache/' + args.model):
-            os.mkdir('cache/' + args.model)
+        os.makedirs('cache/' + args.model, exist_ok=True)
         print('Caching...')
         if method in ['DataInf', 'LiSSA', 'TEST']:
             source, eval = collect_gradient(model, tokenizer, source_data, eval_data)
@@ -55,8 +54,7 @@ def tracing_undesirable_behaviors(model, tokenizer, source_data, eval_data, cach
     tr_path = 'cache/' + args.model + '/' + args.lora + '_' + method + '_tr.pkl'
     val_path = 'cache/' + args.model + '/' + args.lora + '_' + method + '_val.pkl'
     if not os.path.exists(tr_path):
-        if not os.path.exists('cache/' + args.model):
-            os.mkdir('cache/' + args.model)
+        os.makedirs('cache/' + args.model, exist_ok=True)
         print('Caching...')
         start_time = time.time()
         for idx in tqdm(range(len(source_data['prompts']))):
